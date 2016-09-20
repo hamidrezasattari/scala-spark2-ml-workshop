@@ -10,14 +10,14 @@ import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
   * NaiveBayes  classification for pen digit data set: datasource:http://archive.ics.uci.edu/ml/
 
   */
-object NaiveBayes {
+object NaiveBayesClassifier {
 
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org").setLevel(Level.ERROR)
     val spark = SparkSession
       .builder
       .master("local[*]")
-      .appName("multilayer_perceptron_classification")
+      .appName("naive-bayes_classification")
       .getOrCreate()
 
     val training  = spark.read
