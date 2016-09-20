@@ -43,7 +43,7 @@ object SparkMlRecommendationALS {
       .toDF(colNames: _*).cache()
     ratings.printSchema()
     // 3 added data for user 0
-    ratings.take(3).foreach(println)
+    ratings.show(3)
 
     val als = new ALS()
       .setMaxIter(10)
@@ -66,7 +66,6 @@ object SparkMlRecommendationALS {
 
     val predictions = model.transform(userRatings)
     predictions.show()
-
 
 
     spark.stop()
