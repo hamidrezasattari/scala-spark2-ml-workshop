@@ -24,7 +24,7 @@ object MlpClassifier {
       .format("libsvm").load("data/pendigits")
     val testing  = spark.read
       .option("header", false).option("delimiter", " ")
-      .format("libsvm").load("data/pendigits")
+      .format("libsvm").load("data/pendigits.t")
     training.take(5).foreach(println)
  //[8.0,(16,[0,1,2,3,4,5,6,9,10,11,12,13,14,15],[47.0,100.0,27.0,81.0,57.0,37.0,26.0,23.0,56.0,53.0,100.0,90.0,40.0,98.0])]
  // 10 class/lable (0-9) and 16 input parameter makes Mlp with 16 input and 10 output
